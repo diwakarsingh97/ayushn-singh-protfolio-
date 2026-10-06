@@ -1,13 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Finova — Finance, knowledge and better decisions.">
-<title>Finova | Finance. Knowledge. Better Decisions.</title>
+<meta name="description" content="Ayush Singh — Personal Portfolio">
+<title>Ayush Singh | Portfolio</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -16,25 +17,24 @@
 }
 
 :root{
-    --bg:#07111f;
-    --bg2:#0b1728;
+    --bg:#070b12;
+    --bg2:#0b111c;
     --card:rgba(255,255,255,.055);
     --border:rgba(255,255,255,.10);
-    --text:#f4f7fb;
-    --muted:#9caec2;
-    --accent:#54d6a7;
-    --accent2:#5ca8ff;
+    --text:#f5f7fb;
+    --muted:#9ba6b8;
+    --accent:#7c5cff;
+    --accent2:#00d4ff;
 }
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+    font-family:Inter,Arial,sans-serif;
     background:
-        radial-gradient(circle at 15% 10%,rgba(84,214,167,.12),transparent 30%),
-        radial-gradient(circle at 85% 20%,rgba(92,168,255,.12),transparent 30%),
+        radial-gradient(circle at 15% 10%,rgba(124,92,255,.14),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(0,212,255,.10),transparent 28%),
         var(--bg);
     color:var(--text);
     overflow-x:hidden;
-    line-height:1.6;
 }
 
 body:before{
@@ -42,10 +42,11 @@ body:before{
     position:fixed;
     inset:0;
     pointer-events:none;
+    opacity:.25;
     background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-    background-size:50px 50px;
+      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:60px 60px;
     mask-image:linear-gradient(to bottom,black,transparent 80%);
 }
 
@@ -65,22 +66,22 @@ nav{
     left:0;
     width:100%;
     z-index:1000;
-    padding:18px 0;
+    background:rgba(7,11,18,.72);
     backdrop-filter:blur(18px);
-    background:rgba(7,17,31,.72);
-    border-bottom:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .nav-inner{
+    height:74px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:800;
-    letter-spacing:-1px;
+    font-family:"Space Grotesk",sans-serif;
+    font-size:23px;
+    font-weight:700;
 }
 
 .logo span{
@@ -94,13 +95,19 @@ nav{
 }
 
 .nav-links a{
-    color:#c8d3df;
+    color:#aeb7c7;
     font-size:14px;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--accent);
+    color:white;
+}
+
+.nav-button{
+    padding:10px 17px;
+    border:1px solid var(--border);
+    border-radius:10px;
 }
 
 .menu{
@@ -109,34 +116,8 @@ nav{
     cursor:pointer;
 }
 
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:13px 21px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.05);
-    color:white;
-    font-weight:600;
-    transition:.3s;
-    cursor:pointer;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-    border-color:var(--accent);
-    box-shadow:0 10px 35px rgba(84,214,167,.15);
-}
-
-.btn-primary{
-    background:linear-gradient(135deg,var(--accent),#32b98a);
-    color:#06121b;
-    border:none;
-}
-
 section{
-    padding:100px 0;
+    padding:105px 0;
     position:relative;
 }
 
@@ -144,399 +125,488 @@ section{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding-top:130px;
+    padding-top:100px;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.2fr .8fr;
+    grid-template-columns:1.05fr .95fr;
     gap:70px;
     align-items:center;
 }
 
 .badge{
     display:inline-flex;
-    padding:7px 12px;
-    border:1px solid rgba(84,214,167,.25);
-    background:rgba(84,214,167,.07);
-    color:var(--accent);
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    border:1px solid rgba(124,92,255,.3);
+    background:rgba(124,92,255,.08);
     border-radius:999px;
+    color:#c8bfff;
     font-size:13px;
     margin-bottom:22px;
 }
 
+.dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#54e59b;
+    box-shadow:0 0 12px #54e59b;
+}
+
 .hero h1{
+    font-family:"Space Grotesk",sans-serif;
     font-size:clamp(48px,7vw,82px);
     line-height:.98;
     letter-spacing:-4px;
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-.hero h1 span{
-    color:var(--accent);
+.gradient{
+    background:linear-gradient(90deg,#fff,#a99aff,#6ee7ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .hero p{
-    color:var(--muted);
-    font-size:18px;
     max-width:650px;
-    margin-bottom:32px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:30px;
 }
 
-.hero-buttons{
+.buttons{
     display:flex;
-    gap:14px;
+    gap:13px;
     flex-wrap:wrap;
 }
 
-.hero-card{
+.btn{
+    padding:13px 20px;
+    border-radius:11px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--accent),#5b7cff);
+    box-shadow:0 10px 30px rgba(124,92,255,.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(124,92,255,.35);
+}
+
+.btn-secondary{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.035);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.08);
+    transform:translateY(-3px);
+}
+
+.profile-wrap{
     position:relative;
-    min-height:450px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    min-height:440px;
 }
 
-.glow{
+.profile-ring{
     position:absolute;
-    width:300px;
-    height:300px;
-    background:var(--accent);
-    opacity:.13;
-    filter:blur(80px);
+    width:390px;
+    height:390px;
+    border:1px solid rgba(124,92,255,.25);
     border-radius:50%;
+    animation:rotate 18s linear infinite;
 }
 
-.profile{
+.profile-ring:before,
+.profile-ring:after{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--accent2);
+    box-shadow:0 0 20px var(--accent2);
+}
+
+.profile-ring:before{
+    top:20px;
+    left:70px;
+}
+
+.profile-ring:after{
+    right:25px;
+    bottom:80px;
+    background:var(--accent);
+    box-shadow:0 0 20px var(--accent);
+}
+
+.profile-photo{
     width:290px;
     height:290px;
     border-radius:50%;
-    padding:7px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2),transparent);
-    position:relative;
-    animation:float 5s ease-in-out infinite;
-}
-
-.profile img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
     object-fit:cover;
-    display:block;
-    background:#142235;
+    object-position:center;
+    border:5px solid rgba(255,255,255,.09);
+    box-shadow:
+        0 0 0 15px rgba(124,92,255,.035),
+        0 30px 90px rgba(0,0,0,.55);
+    position:relative;
+    z-index:2;
 }
 
-.floating{
+.float-card{
     position:absolute;
-    padding:13px 17px;
-    background:rgba(15,29,48,.82);
+    z-index:4;
+    padding:12px 16px;
     border:1px solid var(--border);
-    backdrop-filter:blur(12px);
-    border-radius:14px;
-    font-size:13px;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    background:rgba(12,17,28,.82);
+    backdrop-filter:blur(15px);
+    border-radius:13px;
+    font-size:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
-.float1{
-    top:45px;
-    left:15px;
+.float-one{
+    top:65px;
+    left:10px;
+    animation:float 4s ease-in-out infinite;
 }
 
-.float2{
+.float-two{
     right:0;
-    top:130px;
+    top:145px;
+    animation:float 4.5s ease-in-out infinite .5s;
 }
 
-.float3{
-    bottom:45px;
-    left:25px;
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0)
-    }
-    50%{
-        transform:translateY(-14px)
-    }
+.float-three{
+    bottom:55px;
+    left:40px;
+    animation:float 5s ease-in-out infinite 1s;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:55px;
+    margin-bottom:45px;
 }
 
-.section-title .mini{
-    color:var(--accent);
-    font-size:13px;
+.eyebrow{
+    color:#9b8dff;
+    font-size:12px;
     text-transform:uppercase;
     letter-spacing:2px;
     font-weight:700;
+    margin-bottom:12px;
 }
 
 .section-title h2{
-    font-size:42px;
-    letter-spacing:-1.5px;
-    margin:9px 0;
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(34px,5vw,52px);
+    letter-spacing:-2px;
 }
 
 .section-title p{
     color:var(--muted);
+    margin-top:12px;
     max-width:650px;
-    margin:auto;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.card{
-    padding:28px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    backdrop-filter:blur(15px);
-    transition:.35s;
-}
-
-.card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(84,214,167,.35);
-    box-shadow:0 20px 50px rgba(0,0,0,.2);
-}
-
-.icon{
-    width:48px;
-    height:48px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:14px;
-    background:rgba(84,214,167,.1);
-    color:var(--accent);
-    font-size:22px;
-    margin-bottom:18px;
-}
-
-.card h3{
-    margin-bottom:9px;
-    font-size:20px;
-}
-
-.card p{
-    color:var(--muted);
-    font-size:14px;
+    line-height:1.7;
 }
 
 .about-grid{
     display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:60px;
-    align-items:center;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
 }
 
-.about-box{
-    padding:35px;
+.card{
     border:1px solid var(--border);
-    background:linear-gradient(145deg,rgba(84,214,167,.08),rgba(92,168,255,.04));
-    border-radius:25px;
+    background:var(--card);
+    backdrop-filter:blur(14px);
+    border-radius:20px;
+    padding:30px;
+    transition:.35s;
 }
 
-.about-box h3{
-    font-size:30px;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(124,92,255,.32);
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.card h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:23px;
+    margin-bottom:14px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.skill{
+    padding:23px;
+    border:1px solid var(--border);
+    background:var(--card);
+    border-radius:16px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,212,255,.25);
+}
+
+.skill-icon{
+    font-size:25px;
     margin-bottom:15px;
 }
 
-.about-box p{
-    color:var(--muted);
-    margin-bottom:20px;
+.skill h3{
+    font-size:16px;
+    margin-bottom:8px;
 }
 
-.stats{
+.skill p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.projects{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:25px;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
 }
 
-.stat{
-    padding:17px;
-    border-radius:14px;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--border);
-}
-
-.stat strong{
-    display:block;
-    color:var(--accent);
-    font-size:24px;
-}
-
-.stat small{
-    color:var(--muted);
-}
-
-.ask{
-    max-width:800px;
-    margin:auto;
-}
-
-.chat{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.045);
-    border-radius:24px;
+.project{
+    min-height:245px;
+    position:relative;
     overflow:hidden;
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
 }
 
-.chat-head{
-    padding:18px 22px;
-    border-bottom:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    gap:12px;
+.project:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(124,92,255,.12);
+    filter:blur(50px);
+    right:-70px;
+    top:-70px;
 }
 
-.status{
-    width:10px;
-    height:10px;
+.project-number{
+    color:#7f8796;
+    font-size:12px;
+    margin-bottom:35px;
+}
+
+.project h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.project p{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.7;
+    max-width:500px;
+}
+
+.project-tag{
+    display:inline-block;
+    margin-top:20px;
+    padding:6px 10px;
+    border-radius:7px;
+    background:rgba(124,92,255,.10);
+    color:#b7adff;
+    font-size:11px;
+}
+
+.timeline{
+    border-left:1px solid rgba(255,255,255,.12);
+    margin-left:8px;
+}
+
+.timeline-item{
+    position:relative;
+    padding:0 0 35px 35px;
+}
+
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:4px;
+    width:9px;
+    height:9px;
     border-radius:50%;
     background:var(--accent);
-    box-shadow:0 0 12px var(--accent);
+    box-shadow:0 0 18px rgba(124,92,255,.8);
 }
 
-.chat-body{
-    min-height:250px;
-    max-height:350px;
-    overflow:auto;
-    padding:22px;
+.timeline-item h3{
+    font-size:18px;
+    margin-bottom:7px;
 }
 
-.message{
-    padding:12px 15px;
-    border-radius:14px;
-    max-width:80%;
-    margin-bottom:13px;
+.timeline-item p{
+    color:var(--muted);
+    line-height:1.7;
     font-size:14px;
 }
 
-.bot{
-    background:rgba(84,214,167,.08);
-    border:1px solid rgba(84,214,167,.12);
-}
-
-.user{
-    background:rgba(92,168,255,.1);
-    margin-left:auto;
-}
-
-.chat-input{
-    display:flex;
-    gap:10px;
-    padding:15px;
-    border-top:1px solid var(--border);
-}
-
-.chat-input input{
-    flex:1;
-    border:none;
-    outline:none;
-    background:rgba(255,255,255,.05);
-    color:white;
-    padding:14px;
-    border-radius:12px;
-}
-
-.chat-input button{
-    border:none;
-    border-radius:12px;
-    padding:0 20px;
-    background:var(--accent);
-    cursor:pointer;
-    font-weight:700;
-}
-
 .contact{
-    max-width:720px;
-    margin:auto;
     text-align:center;
 }
 
-.contact p{
-    color:var(--muted);
-    margin:12px auto 25px;
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.privacy{
-    background:rgba(255,255,255,.025);
-}
-
-.privacy-box{
-    max-width:900px;
-    margin:auto;
-    padding:35px;
-    background:var(--card);
+.contact-box{
+    padding:65px 30px;
     border:1px solid var(--border);
-    border-radius:22px;
+    border-radius:25px;
+    background:
+        radial-gradient(circle at 50% 0,rgba(124,92,255,.16),transparent 45%),
+        rgba(255,255,255,.035);
 }
 
-.privacy-box h3{
-    margin:25px 0 8px;
+.contact-box h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(35px,5vw,58px);
+    letter-spacing:-2px;
+    margin-bottom:16px;
 }
 
-.privacy-box h3:first-child{
-    margin-top:0;
-}
-
-.privacy-box p{
+.contact-box p{
     color:var(--muted);
+    max-width:600px;
+    margin:0 auto 28px;
+    line-height:1.7;
+}
+
+.email{
+    display:inline-block;
+    margin-top:18px;
+    color:#bdb5ff;
     font-size:14px;
 }
 
 footer{
-    padding:35px 0;
-    border-top:1px solid var(--border);
-    text-align:center;
-    color:var(--muted);
-    font-size:13px;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:28px 0;
+    color:#737d8d;
+    font-size:12px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .reveal{
     opacity:0;
-    transform:translateY(25px);
+    transform:translateY(35px);
     transition:opacity .8s ease,transform .8s ease;
 }
 
-.reveal.active{
+.reveal.show{
     opacity:1;
-    transform:none;
+    transform:translateY(0);
+}
+
+.privacy{
+    display:none;
+    min-height:100vh;
+    padding:130px 0 70px;
+}
+
+.privacy.active{
+    display:block;
+}
+
+#portfolio.hidden{
+    display:none;
+}
+
+.privacy-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.privacy-content h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.privacy-content h2{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.privacy-content p,
+.privacy-content li{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+.privacy-content ul{
+    padding-left:20px;
+}
+
+.back{
+    margin-bottom:30px;
+    display:inline-block;
+}
+
+@keyframes rotate{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
 }
 
 @media(max-width:800px){
 
     .nav-links{
         position:absolute;
-        top:70px;
-        left:4%;
-        width:92%;
-        display:none;
-        flex-direction:column;
+        top:74px;
+        left:0;
+        width:100%;
         padding:20px;
-        background:#0c1a2c;
-        border:1px solid var(--border);
-        border-radius:16px;
+        background:rgba(7,11,18,.97);
+        flex-direction:column;
+        align-items:flex-start;
+        display:none;
+        border-bottom:1px solid var(--border);
     }
 
-    .nav-links.show{
+    .nav-links.open{
         display:flex;
     }
 
@@ -554,48 +624,72 @@ footer{
     }
 
     .hero h1{
-        font-size:52px;
         letter-spacing:-2.5px;
     }
 
-    .hero-card{
-        min-height:370px;
+    .profile-wrap{
+        min-height:380px;
+        margin-top:10px;
     }
 
-    .profile{
-        width:240px;
-        height:240px;
+    .profile-ring{
+        width:320px;
+        height:320px;
     }
 
-    .grid{
+    .profile-photo{
+        width:235px;
+        height:235px;
+    }
+
+    .float-one{
+        left:0;
+    }
+
+    .float-two{
+        right:0;
+    }
+
+    .skills{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .projects{
         grid-template-columns:1fr;
-    }
-
-    .section-title h2{
-        font-size:34px;
     }
 }
 
-@media(max-width:480px){
+@media(max-width:500px){
 
     section{
-        padding:75px 0;
+        padding:80px 0;
     }
 
-    .hero h1{
-        font-size:43px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .stats{
+    .skills{
         grid-template-columns:1fr;
     }
 
-    .floating{
-        transform:scale(.85);
+    .profile-ring{
+        width:280px;
+        height:280px;
+    }
+
+    .profile-photo{
+        width:210px;
+        height:210px;
+    }
+
+    .float-card{
+        font-size:10px;
+        padding:9px 11px;
+    }
+
+    .float-three{
+        left:0;
+    }
+
+    .footer-inner{
+        flex-direction:column;
     }
 }
 </style>
@@ -603,91 +697,71 @@ footer{
 
 <body>
 
+<div id="portfolio">
+
 <nav>
 <div class="container nav-inner">
 
-    <a href="#home" class="logo">
-        Fin<span>ova</span>
-    </a>
+<a href="#home" class="logo">Ayush<span>.</span></a>
 
-    <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#ask">Ask Finova</a>
-        <a href="#contact">Contact</a>
-        <a href="#privacy">Privacy</a>
-    </div>
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#journey">Journey</a>
+<a href="#contact">Contact</a>
+<a href="#privacy" onclick="showPrivacy()">Privacy</a>
+</div>
 
-    <div class="menu" onclick="toggleMenu()">☰</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
 
 </div>
 </nav>
 
 
-<!-- HERO -->
-
 <section class="hero" id="home">
-
 <div class="container hero-grid">
 
 <div class="reveal">
 
-    <div class="badge">
-        ● Building the future of financial learning
-    </div>
+<div class="badge">
+<span class="dot"></span>
+Building, learning & exploring
+</div>
 
-    <h1>
-        Finance.<br>
-        <span>Made Simple.</span>
-    </h1>
+<h1>
+Hi, I'm<br>
+<span class="gradient">Ayush Singh.</span>
+</h1>
 
-    <p>
-        Welcome to Finova — a growing platform built to make
-        finance, investing and financial thinking easier to understand.
-        No unnecessary complexity. Just useful knowledge.
-    </p>
+<p>
+I’m interested in finance, investing, economics, technology and building
+digital products that solve real-world problems. This is a space where I
+share what I’m learning, what I’m building and where I’m heading.
+</p>
 
-    <div class="hero-buttons">
-
-        <a href="#ask" class="btn btn-primary">
-            Ask Finova →
-        </a>
-
-        <a href="#about" class="btn">
-            Explore Finova
-        </a>
-
-    </div>
+<div class="buttons">
+<a href="#projects" class="btn btn-primary">Explore My Work →</a>
+<a href="#contact" class="btn btn-secondary">Let's Connect</a>
+</div>
 
 </div>
 
 
-<div class="hero-card reveal">
+<div class="profile-wrap reveal">
 
-    <div class="glow"></div>
+<div class="profile-ring"></div>
 
-    <!-- YOUR GITHUB PHOTO -->
-    <div class="profile">
+<img
+class="profile-photo"
+src="WhatsApp%20Image%202026-10-06%20at%207.47.48%20PM.jpeg"
+alt="Ayush Singh"
+>
 
-        <img
-            src="WhatsApp%20Image%202026-10-06%20at%207.47.48%20PM.jpeg"
-            alt="Diwakar Singh"
-        >
-
-    </div>
-
-    <div class="floating float1">
-        📈 Finance
-    </div>
-
-    <div class="floating float2">
-        💡 Learn Better
-    </div>
-
-    <div class="floating float3">
-        🚀 Build • Learn • Grow
-    </div>
+<div class="float-card float-one">📊 Finance</div>
+<div class="float-card float-two">💡 Builder</div>
+<div class="float-card float-three">🚀 Creator</div>
 
 </div>
 
@@ -695,707 +769,431 @@ footer{
 </section>
 
 
-<!-- ABOUT -->
-
 <section id="about">
-
 <div class="container">
 
 <div class="section-title reveal">
-
-    <div class="mini">
-        About Finova
-    </div>
-
-    <h2>
-        More Than Just Finance
-    </h2>
-
-    <p>
-        Finova is being built around one simple idea:
-        financial knowledge should be understandable and useful.
-    </p>
-
+<div class="eyebrow">01 — About</div>
+<h2>A little about me.</h2>
+<p>
+Curiosity is probably the simplest way to describe what drives me.
+</p>
 </div>
-
 
 <div class="about-grid">
 
-<div class="about-box reveal">
-
-    <h3>
-        Why Finova?
-    </h3>
-
-    <p>
-        Finance can often feel complicated because of unnecessary
-        jargon and confusing explanations. Finova aims to break
-        concepts down into simple, practical ideas.
-    </p>
-
-    <p>
-        From investing and markets to personal finance and economic
-        concepts, the goal is to help people think better about money.
-    </p>
-
-    <a href="#features" class="btn btn-primary">
-        Discover More
-    </a>
-
+<div class="card reveal">
+<h3>Who I am</h3>
+<p>
+I'm Ayush Singh. I enjoy understanding how things work — from financial
+markets and economics to technology and digital products. I like taking
+ideas apart, learning the fundamentals and then trying to build something
+useful with what I learn.
+</p>
 </div>
-
-
-<div class="grid" style="grid-template-columns:1fr 1fr">
 
 <div class="card reveal">
-
-    <div class="icon">🎯</div>
-
-    <h3>
-        Simple
-    </h3>
-
-    <p>
-        Complex financial concepts explained in a clear
-        and understandable way.
-    </p>
-
-</div>
-
-
-<div class="card reveal">
-
-    <div class="icon">🧠</div>
-
-    <h3>
-        Practical
-    </h3>
-
-    <p>
-        Focus on knowledge that can actually help people
-        make better decisions.
-    </p>
-
-</div>
-
-
-<div class="card reveal">
-
-    <div class="icon">📊</div>
-
-    <h3>
-        Finance
-    </h3>
-
-    <p>
-        Explore investing, markets, economics and
-        personal finance.
-    </p>
-
-</div>
-
-
-<div class="card reveal">
-
-    <div class="icon">🚀</div>
-
-    <h3>
-        Future
-    </h3>
-
-    <p>
-        A platform that continues to evolve with
-        its community.
-    </p>
-
+<h3>What I care about</h3>
+<p>
+I'm focused on developing strong fundamentals in finance and business
+while also learning how technology can turn ideas into practical products.
+I believe learning becomes much more valuable when you actually build,
+experiment and share it.
+</p>
 </div>
 
 </div>
-
-</div>
-
 </div>
 </section>
 
 
-<!-- FEATURES -->
-
-<section id="features">
-
+<section id="skills">
 <div class="container">
 
 <div class="section-title reveal">
-
-    <div class="mini">
-        What Finova Offers
-    </div>
-
-    <h2>
-        Learn. Think. Decide.
-    </h2>
-
-    <p>
-        A growing collection of ideas designed to make
-        financial thinking more accessible.
-    </p>
-
+<div class="eyebrow">02 — Skills & Interests</div>
+<h2>Things I'm exploring.</h2>
+<p>
+A combination of finance, analysis, technology and creativity.
+</p>
 </div>
 
+<div class="skills">
 
-<div class="grid">
-
-
-<div class="card reveal">
-
-    <div class="icon">💰</div>
-
-    <h3>
-        Personal Finance
-    </h3>
-
-    <p>
-        Understand budgeting, saving, financial planning,
-        debt and everyday money decisions.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">📈</div>
+<h3>Finance & Markets</h3>
+<p>Financial analysis, investing, valuation, markets and understanding how businesses create value.</p>
 </div>
 
-
-<div class="card reveal">
-
-    <div class="icon">📈</div>
-
-    <h3>
-        Investing
-    </h3>
-
-    <p>
-        Learn the fundamentals behind stocks, bonds,
-        mutual funds, risk and returns.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">📚</div>
+<h3>CFA Learning</h3>
+<p>Building a strong foundation in investment analysis, financial reporting, economics and portfolio concepts.</p>
 </div>
 
-
-<div class="card reveal">
-
-    <div class="icon">🌍</div>
-
-    <h3>
-        Economics
-    </h3>
-
-    <p>
-        Understand inflation, interest rates, GDP,
-        currencies and how economies work.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">🧠</div>
+<h3>Research & Analysis</h3>
+<p>Breaking complicated topics into simpler ideas and looking at problems from different angles.</p>
 </div>
 
-
-<div class="card reveal">
-
-    <div class="icon">🧮</div>
-
-    <h3>
-        Financial Concepts
-    </h3>
-
-    <p>
-        Break down important financial terms into
-        simple explanations and examples.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">💻</div>
+<h3>Web Development</h3>
+<p>HTML, CSS and JavaScript with a focus on creating clean and interactive web experiences.</p>
 </div>
 
-
-<div class="card reveal">
-
-    <div class="icon">🤔</div>
-
-    <h3>
-        Financial Thinking
-    </h3>
-
-    <p>
-        Go beyond definitions and understand the
-        reasoning behind financial decisions.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">💡</div>
+<h3>Product Ideas</h3>
+<p>Turning everyday problems into possible digital products and experimenting with new ideas.</p>
 </div>
 
-
-<div class="card reveal">
-
-    <div class="icon">💬</div>
-
-    <h3>
-        Community
-    </h3>
-
-    <p>
-        Ask questions, share problems and connect
-        with people interested in learning finance.
-    </p>
-
+<div class="skill reveal">
+<div class="skill-icon">🎥</div>
+<h3>Content & Communication</h3>
+<p>Exploring ways to explain finance, business and complex ideas in simple language.</p>
 </div>
 
 </div>
-
 </div>
 </section>
 
 
-<!-- ASK FINOVA -->
-
-<section id="ask">
-
+<section id="projects">
 <div class="container">
 
 <div class="section-title reveal">
-
-    <div class="mini">
-        Ask Finova
-    </div>
-
-    <h2>
-        Have a Question?
-    </h2>
-
-    <p>
-        Ask a finance-related question and Finova will give
-        you a simple starting explanation.
-    </p>
-
-</div>
-
-
-<div class="ask reveal">
-
-<div class="chat">
-
-<div class="chat-head">
-
-    <div class="status"></div>
-
-    <div>
-
-        <strong>
-            Finova Thinking
-        </strong>
-
-        <div style="font-size:12px;color:var(--muted)">
-            Financial knowledge assistant
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="chat-body" id="chatBody">
-
-    <div class="message bot">
-        Hi! 👋 I'm Finova. Ask me something about finance,
-        investing, economics or money.
-    </div>
-
-</div>
-
-
-<div class="chat-input">
-
-    <input
-        id="question"
-        type="text"
-        placeholder="Ask something like: What is inflation?"
-        onkeydown="if(event.key==='Enter') askFinova()"
-    >
-
-    <button onclick="askFinova()">
-        Ask
-    </button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="container">
-
-<div class="contact reveal">
-
-<div class="section-title" style="margin-bottom:25px">
-
-    <div class="mini">
-        Get In Touch
-    </div>
-
-    <h2>
-        Talk to the Founder
-    </h2>
-
-</div>
-
+<div class="eyebrow">03 — Projects</div>
+<h2>Things I've been building.</h2>
 <p>
-    Have an idea, question, suggestion or want to discuss Finova?
-    I'd love to hear from you.
+A collection of projects, experiments and ideas I'm working on.
 </p>
+</div>
 
+<div class="projects">
 
-<div class="contact-buttons">
+<div class="card project reveal">
+<div class="project-number">01 / FINOVA</div>
+<h3>Finova</h3>
+<p>
+A finance-focused digital product designed to make financial concepts,
+learning and everyday financial questions easier to understand.
+</p>
+<span class="project-tag">Building</span>
+</div>
 
-    <a
-        class="btn btn-primary"
-        href="mailto:ayush5292singh@gmail.com?subject=Finova%20Message"
-    >
-        📧 Email Me
-    </a>
+<div class="card project reveal">
+<div class="project-number">02 / CHECKBEST</div>
+<h3>CheckBest.in</h3>
+<p>
+A product comparison and review project designed to help people make
+better purchasing decisions through research and comparisons.
+</p>
+<span class="project-tag">Project</span>
+</div>
 
-    <a class="btn" href="#ask">
-        💬 Ask Finova
-    </a>
+<div class="card project reveal">
+<div class="project-number">03 / KHARCHATRACK</div>
+<h3>KharchaTrack</h3>
+<p>
+A concept for an Indian personal expense manager covering everyday
+spending, UPI, cash, cards, EMIs and financial tracking.
+</p>
+<span class="project-tag">Concept</span>
+</div>
 
+<div class="card project reveal">
+<div class="project-number">04 / MERADRIVER</div>
+<h3>MeraDriver</h3>
+<p>
+A practical service concept inspired by a simple everyday problem:
+finding a reliable driver when you need one.
+</p>
+<span class="project-tag">Concept</span>
+</div>
+
+<div class="card project reveal">
+<div class="project-number">05 / AI ASSISTANT</div>
+<h3>Personal AI Assistant</h3>
+<p>
+Exploring an interactive assistant concept combining conversation,
+voice interaction, search and useful real-time information.
+</p>
+<span class="project-tag">Experiment</span>
+</div>
+
+<div class="card project reveal">
+<div class="project-number">06 / CONTENT</div>
+<h3>Finance Content</h3>
+<p>
+Exploring educational content around finance, investing, economics and
+financial concepts with a focus on making difficult topics simpler.
+</p>
+<span class="project-tag">Creating</span>
 </div>
 
 </div>
-
 </div>
 </section>
 
 
-<!-- PRIVACY POLICY -->
-
-<section class="privacy" id="privacy">
-
+<section id="journey">
 <div class="container">
 
 <div class="section-title reveal">
-
-    <div class="mini">
-        Privacy
-    </div>
-
-    <h2>
-        Privacy Policy
-    </h2>
-
-    <p>
-        A simple overview of how this website handles information.
-    </p>
-
+<div class="eyebrow">04 — Journey</div>
+<h2>Currently on my journey.</h2>
+<p>
+Learning is not a straight line. These are some of the areas I'm
+actively exploring.
+</p>
 </div>
 
+<div class="timeline">
 
-<div class="privacy-box reveal">
+<div class="timeline-item reveal">
+<h3>Finance & Investment</h3>
+<p>
+Continuously strengthening my understanding of financial statements,
+valuation, markets, economics and investment analysis.
+</p>
+</div>
 
-<h3>
-    1. Information We Collect
-</h3>
+<div class="timeline-item reveal">
+<h3>CFA Level I Preparation</h3>
+<p>
+Working through the CFA Level I curriculum and building stronger
+foundations in finance and quantitative concepts.
+</p>
+</div>
+
+<div class="timeline-item reveal">
+<h3>Building Digital Products</h3>
+<p>
+Experimenting with projects such as Finova and other ideas that combine
+finance, technology and practical everyday problems.
+</p>
+</div>
+
+<div class="timeline-item reveal">
+<h3>Learning by Building</h3>
+<p>
+Instead of only consuming information, I'm trying to turn what I learn
+into websites, products, content and experiments.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="contact-box reveal">
+
+<div class="eyebrow">05 — Contact</div>
+
+<h2>Let's build something.</h2>
 
 <p>
-    Finova does not intentionally collect sensitive personal
-    information through this static website. If you contact the
-    founder by email, the information you voluntarily provide
-    may be used to respond to you.
+Have an idea, question, collaboration opportunity or simply want to
+connect? Feel free to reach out.
 </p>
 
+<a
+class="btn btn-primary"
+href="mailto:ayush5292singh@gmail.com"
+>
+Email Ayush →
+</a>
 
-<h3>
-    2. Ask Finova
-</h3>
+<br>
 
-<p>
-    The Ask Finova interface on this website is an interactive
-    demonstration. Questions entered into the interface are
-    processed locally by the webpage unless an external service
-    is specifically connected in the future.
-</p>
-
-
-<h3>
-    3. Cookies
-</h3>
-
-<p>
-    This website does not intentionally use advertising cookies
-    or tracking cookies in this static version.
-</p>
-
-
-<h3>
-    4. Third-Party Services
-</h3>
-
-<p>
-    External services, links or integrations may have their own
-    privacy policies. Users should review those policies when
-    using such services.
-</p>
-
-
-<h3>
-    5. Children's Privacy
-</h3>
-
-<p>
-    Finova does not knowingly collect personal information from
-    children through this website.
-</p>
-
-
-<h3>
-    6. Changes to This Policy
-</h3>
-
-<p>
-    This Privacy Policy may be updated as Finova develops new
-    features and services. Any updated version will be published
-    on this page.
-</p>
-
-
-<h3>
-    7. Contact
-</h3>
-
-<p>
-    For privacy-related questions, contact:
-    <strong>ayush5292singh@gmail.com</strong>
-</p>
+<a
+class="email"
+href="mailto:ayush5292singh@gmail.com"
+>
+ayush5292singh@gmail.com
+</a>
 
 </div>
 
 </div>
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
-
-<div class="container">
-
-    <strong>Finova</strong>
-    — Finance. Knowledge. Better Decisions.
-
-    <br><br>
-
-    © 2026 Finova. All rights reserved.
+<div class="container footer-inner">
+<div>© 2026 Ayush Singh. All rights reserved.</div>
+<div>Finance · Technology · Ideas</div>
+</div>
+</footer>
 
 </div>
 
-</footer>
+
+<!-- PRIVACY PAGE -->
+
+<div class="privacy" id="privacy">
+
+<div class="container">
+
+<div class="privacy-content">
+
+<a href="#" class="btn btn-secondary back" onclick="hidePrivacy()">
+← Back to Portfolio
+</a>
+
+<div class="eyebrow">Privacy</div>
+
+<h1>Privacy Policy</h1>
+
+<p>
+Last updated: October 2026
+</p>
+
+<h2>Introduction</h2>
+
+<p>
+This website is the personal portfolio of Ayush Singh. Your privacy is
+important, and this page explains how information provided through this
+website may be handled.
+</p>
+
+<h2>Information You Provide</h2>
+
+<p>
+If you contact me through email or another communication method provided
+on this website, I may receive the information you voluntarily provide,
+such as your name, email address and message.
+</p>
+
+<h2>How Information Is Used</h2>
+
+<p>
+Information you voluntarily provide may be used only to respond to your
+message, communicate with you, discuss collaboration opportunities or
+provide information you requested.
+</p>
+
+<h2>Cookies & Analytics</h2>
+
+<p>
+This portfolio does not intentionally collect personal information
+through cookies. If third-party services are added in the future, this
+policy may be updated accordingly.
+</p>
+
+<h2>Third-Party Services</h2>
+
+<p>
+This website may contain links to external websites or services.
+External websites have their own privacy policies and practices, which
+are outside the control of this portfolio.
+</p>
+
+<h2>Data Security</h2>
+
+<p>
+Reasonable care will be taken with information voluntarily shared
+through this website. However, no internet transmission can be
+guaranteed to be completely secure.
+</p>
+
+<h2>Contact</h2>
+
+<p>
+For questions regarding this Privacy Policy, you can contact:
+</p>
+
+<p style="margin-top:10px;">
+<strong style="color:white;">ayush5292singh@gmail.com</strong>
+</p>
+
+</div>
+</div>
+</div>
 
 
 <script>
 
-/* MOBILE MENU */
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{
+threshold:.12
+});
+
+reveals.forEach(el=>observer.observe(el));
+
 
 function toggleMenu(){
-
-    document
-        .getElementById("navLinks")
-        .classList
-        .toggle("show");
-
+document.getElementById("navLinks").classList.toggle("open");
 }
 
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        document
-            .getElementById("navLinks")
-            .classList
-            .remove("show");
-
-    });
-
+document.querySelectorAll(".nav-links a").forEach(link=>{
+link.addEventListener("click",()=>{
+document.getElementById("navLinks").classList.remove("open");
+});
 });
 
 
-/* SCROLL ANIMATION */
+function showPrivacy(){
 
-const observer =
-new IntersectionObserver(entries => {
+document.getElementById("portfolio").classList.add("hidden");
+document.getElementById("privacy").classList.add("active");
 
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("active");
-
-        }
-
-    });
-
-},{
-    threshold:.12
+window.scrollTo({
+top:0,
+behavior:"smooth"
 });
 
+history.pushState(null,"","#privacy");
 
-document
-.querySelectorAll(".reveal")
-.forEach(el => observer.observe(el));
-
-
-/* ASK FINOVA */
-
-function askFinova(){
-
-    const input =
-        document.getElementById("question");
-
-    const body =
-        document.getElementById("chatBody");
-
-    const question =
-        input.value.trim();
-
-    if(!question) return;
-
-
-    const user =
-        document.createElement("div");
-
-    user.className =
-        "message user";
-
-    user.textContent =
-        question;
-
-    body.appendChild(user);
-
-    input.value="";
-
-
-    const thinking =
-        document.createElement("div");
-
-    thinking.className =
-        "message bot";
-
-    thinking.textContent =
-        "Finova is thinking...";
-
-    body.appendChild(thinking);
-
-    body.scrollTop =
-        body.scrollHeight;
-
-
-    setTimeout(() => {
-
-        const q =
-            question.toLowerCase();
-
-        let answer;
-
-
-        if(q.includes("inflation")){
-
-            answer =
-            "Inflation means the general prices of goods and services are rising over time. In simple terms, ₹100 today may buy less in the future.";
-
-        }
-
-        else if(
-            q.includes("stock") ||
-            q.includes("share")
-        ){
-
-            answer =
-            "A stock represents ownership in a company. When you buy a share, you become a very small owner of that business. The price can rise or fall depending on many factors.";
-
-        }
-
-        else if(q.includes("bond")){
-
-            answer =
-            "A bond is essentially a loan made by an investor to a company or government. In return, the borrower generally pays interest and returns the principal according to the bond's terms.";
-
-        }
-
-        else if(
-            q.includes("mutual fund")
-        ){
-
-            answer =
-            "A mutual fund pools money from many investors and invests it according to a defined strategy. It can make diversification easier, but it still carries investment risk.";
-
-        }
-
-        else if(q.includes("sip")){
-
-            answer =
-            "A SIP, or Systematic Investment Plan, lets you invest a fixed amount regularly, often monthly, into a mutual fund. It can help create investing discipline over time.";
-
-        }
-
-        else if(
-            q.includes("interest rate") ||
-            q.includes("repo")
-        ){
-
-            answer =
-            "Interest rates affect the cost of borrowing money. When rates rise, loans generally become more expensive; when rates fall, borrowing can become cheaper.";
-
-        }
-
-        else if(q.includes("gdp")){
-
-            answer =
-            "GDP, or Gross Domestic Product, measures the monetary value of final goods and services produced within an economy during a period.";
-
-        }
-
-        else if(q.includes("risk")){
-
-            answer =
-            "Investment risk is the possibility that your actual result will differ from what you expected, including the possibility of losing money.";
-
-        }
-
-        else if(q.includes("dividend")){
-
-            answer =
-            "A dividend is a distribution of part of a company's profits to shareholders. Companies can choose to pay dividends or reinvest profits.";
-
-        }
-
-        else{
-
-            answer =
-            "That's an interesting question. In this demo version, Finova can explain basic finance, investing and economics concepts. A full AI backend can be connected later for deeper answers.";
-
-        }
-
-
-        thinking.textContent =
-            answer;
-
-        body.scrollTop =
-            body.scrollHeight;
-
-    },900);
-
+return false;
 }
+
+
+function hidePrivacy(){
+
+document.getElementById("privacy").classList.remove("active");
+document.getElementById("portfolio").classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+history.pushState(null,"","#home");
+
+return false;
+}
+
+
+window.addEventListener("load",()=>{
+
+if(location.hash==="#privacy"){
+showPrivacy();
+}
+
+setTimeout(()=>{
+document.querySelectorAll(".hero .reveal").forEach(el=>{
+el.classList.add("show");
+});
+},200);
+
+});
 
 </script>
 
 </body>
 </html>
-```
